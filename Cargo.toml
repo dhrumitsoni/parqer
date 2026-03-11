@@ -1,0 +1,25 @@
+[package]
+name = "parqer"
+version = "0.1.0"
+authors = ["Dhrumit Mandaliya <mandaliya.dhrumit@gmail.com>"]
+license = "GNU GENERAL PUBLIC LICENSE"
+description = "Command line Parquet file explorer"
+readme = "README.md"
+homepage = "https://github.com/dhrumitsoni/parqer"
+repository = "https://github.com/dhrumitsoni/parqer"
+keywords = ["cli", "parquet", "viewer", "tui"]
+edition = "2024"
+rust-version = "1.88"
+default-run = "parqer"
+
+[dependencies]
+color-eyre = "0.6.3"
+crossterm = "0.29.0"
+parquet = "58.0.0"
+ratatui = "0.30.0"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true
